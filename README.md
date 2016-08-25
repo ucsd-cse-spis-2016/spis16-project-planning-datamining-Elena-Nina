@@ -26,3 +26,4 @@ Steps to identify how funny a word/phrase is:
 1. Scrape joke site for joke content and rating.
 2. Order all jokes in terms of highest rating to lowest rating.
 3. For all jokes in between 7.5-10, find the most used words. 
+file:///home/linux/ieng6/spis16/spis16ar/Downloads/M&C.jpg
