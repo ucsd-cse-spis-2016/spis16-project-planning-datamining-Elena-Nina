@@ -1,0 +1,15 @@
+import bs4
+from lxml import html
+import requests
+from bs4 import BeautifulSoup
+
+myUrl = "https://www.ratemyprofessors.com/search.jsp?queryBy=schoolId&schoolName=University+of+California+San+Diego&schoolID=1079&queryoption=TEACHER"
+
+page = requests.get(myUrl)
+
+htmlStuff = bs4.BeautifulSoup(page.text, "lxml")
+
+ratings = htmlStuff.select("div.result-list") 
+
+
+
