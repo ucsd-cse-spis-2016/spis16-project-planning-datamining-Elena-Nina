@@ -7,6 +7,7 @@ def parseData(fname):
 dataDName = [] #733 professors
 gen = parseData('http://www.ucsd.edu/catalog/front/faculty.html')
 
+'''DOESNT WORK!! CANT GET EVERYONE TO SHOW UP? CANG GET THE ENTIRE <LI></LI> TO SHOW UP'''
 dataDDepartment = []
 trash = []
 for i in gen:
@@ -20,7 +21,7 @@ for i in gen:
 
 
         
-
+'''WORKS!'''
 gen = parseData('http://www.ucsd.edu/catalog/front/faculty.html')
 for i in gen:
     myLine = gen.next()
