@@ -1,15 +1,23 @@
 from rateMyProfDATA import dataR
 
+dataRName = []
+for i in dataR:
+    m = str(i['Text'])
+    x = m.split()[:2]
+    dataRName.append(x[0] + x[1])
 
-rateMyProfDict = {}
-#idk how to make this better. try again tomorrow.today? idek
-def name(x):
-    m = str(dataR[x]['Text'])
-    print m.split()[:2]
+dataRRating = []
+for i in dataR:
+    dataRRating.append(i['Rating'])
+
+matrix = [dataRName,dataRRating]
+
+rateMyProfList = []
+
+for i in range(len(dataRName)):
+    rateMyProfList.append([row[i] for row in matrix])
 
 
 
-def rating(x):
-    print dataR[x]['Rating']
 
 
