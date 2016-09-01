@@ -3,12 +3,6 @@ from commonProf import departmentRate
 from collections import defaultdict
 import numpy
 
-
-intBio = []
-for i in departmentRate['bio']:
-    intBio.append(int(i))
-	
-
 def histogramify(data,bins):
 	M = max(data)
 	m = min(data)
@@ -20,6 +14,20 @@ def histogramify(data,bins):
 				f=m+i*interval
 		hist[f]+=1
 	return hist
+
+intBio = []
+for i in departmentRate['bio']:
+    intBio.append(int(i))
+intEng = []
+for i in departmentRate['engineering']:
+    intEng.append(int(i))
+intPhys = []
+for i in departmentRate['physical']:
+    intPhys.append(int(i))
+intArts = []
+for i in departmentRate['Art/Hum/SS']:
+    intArts.append(int(i))
+
 
 countsBio = [ 0 , 0 , 0 , 0 , 0 ]
 trash = []
@@ -37,12 +45,13 @@ for i in intBio:
     else:
         trash.append(i)
         
-
 hist_bio = histogramify(intBio,5)
+hist_eng = histogramify(intEng,5)
+hist_phys = histogramify(intPhys,5)
+hist_arts = histogramify(intArts,5)
 
 xs = range(1,5)
 
 ys = [hist_bio[x] for x in xs]
 
 plt.bar(xs,ys)
-
