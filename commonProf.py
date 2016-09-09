@@ -1,5 +1,5 @@
-from rateMyProf_scraper import profDepartmentList
-from rateMyProf_scraper import rateMyProfList
+from dataR_D_scraper import profDepartmentList
+from dataR_D_scraper import rateMyProfList
 from departments import arts_And_HumanitiesSS
 from departments import bio
 from departments import engineering
@@ -11,6 +11,7 @@ from departments import scripps
 from departments import pharmacy
 
 #to get this to work, 4 windows must be opened! all from desktop!
+
 
 #list of common professors
 cmProf = []
@@ -55,8 +56,6 @@ for i in cmProfDepart:
             i[1] = 'bio'
         elif n in engineering:
             i[1] = 'engineering'
-        elif n in physical:
-            i[1] = 'physical sciences'
         elif n in management:
             i[1] = 'management'
         elif n in global_policy:
@@ -75,15 +74,21 @@ for i in cmProfDepart:
 
 ''' if cmProfDepart[i][0] == cmProfRate[i][0]
 then...
-dict[cmProfDepart[i][1]] = [cmProfRate[i][1]]'''
-
+dict[cmProfDepart[i][1]] = [cmProfRate[i][1]]?????'''
+#using physical , Art/Hum/SS , bio , engineering
 departmentRate = {}
 no = 0
 for i in cmProfDepart:
+    key = i[1]
     for n in cmProfRate:
         if i[0] == n[0]:
-           departmentRate[i[1]] = [n[1]]
+            departmentRate.setdefault(key, [])
+            departmentRate[key].append(n[1])
         else:
             no = no + 1
 
 
+
+#cmProfDepart[0]
+#cmProfRate[0]
+#departmentRate['engineering']
