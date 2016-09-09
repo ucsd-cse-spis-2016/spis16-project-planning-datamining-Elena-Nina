@@ -17,3 +17,4 @@ for i in d:
     dict["Professor"] = p_data[0] + "," + p_data[1]
     dataD.append(dict)
     
+#dataD[0]
